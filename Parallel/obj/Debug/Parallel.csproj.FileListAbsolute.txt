@@ -1,0 +1,10 @@
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\Parallel.exe.config
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\Parallel.exe
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\Parallel.pdb
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\CsvHelper.dll
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\CsvHelper.xml
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\obj\Debug\Parallel.exe
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\obj\Debug\Parallel.pdb
+C:\Users\Nikitas\Documents\Visual Studio 2013\Projects\Parallel\Parallel\obj\Debug\Parallel.csprojResolveAssemblyReference.cache
