@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsvManager.cs" />
+    <Compile Include="FixedRateScheduler.cs" />
     <Compile Include="ValidationFlow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
