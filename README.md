@@ -1,3 +1,55 @@
+# FixedRateScheduler 
+
+It is a task scheduler that can limit the number of threads used by the app.
+
+There is a  demo method that helps to understand the usage. 
+
+	static void fixedRateSchedulingDemo()
+        {
+            var groupSize = 2;
+            var totalTasks = 5;
+            FixedRateScheduler frs = new FixedRateScheduler(2, new TimeSpan(0, 0, 4), groupSize, totalTasks);
+            List<Task> tasks = new List<Task>();
+            TaskFactory factory = new TaskFactory(frs);
+            CancellationTokenSource cts = new CancellationTokenSource();
+            // Use our factory to run a set of tasks. 
+            Object lockObj = new Object();
+            int flops = 25;
+
+            for (int taskNum = 0; taskNum < totalTasks; taskNum++)
+            {
+                int iteration = taskNum;
+                Task t = factory.StartNew(() =>
+                {
+                    Console.WriteLine("Started task {0} on thread {1}", (iteration + 1), Thread.CurrentThread.ManagedThreadId);
+                    for (int i = 0; i < flops; i++)
+                    {
+                        lock (lockObj)
+                        {
+                            Console.Write("\r{0}%   ", (i + 1) * 100 / flops);
+                            Thread.Sleep(50);
+                        }
+
+
+                    } Console.WriteLine();
+                }, cts.Token);
+                tasks.Add(t);
+            }
+
+            // Wait for the tasks to complete before displaying a completion message.
+            Task.WaitAll(tasks.ToArray());
+            cts.Dispose(); frs.Dispose();
+            Console.WriteLine("\n\nSuccessful completion.");
+        }
+
+We instantiate the scheduler with
+
+	FixedRateScheduler frs = new FixedRateScheduler(2, new TimeSpan(0, 0, 4), groupSize, totalTasks);
+
+The first parameter is the maximum degree of parallelism, the number of maximum threads the app may use to complete the tasks.
+
+The second parameter is the period between the completion of the groups of tasks. In this demo we run groupSize tasks every 4 seconds until the tasks completed reaches totalTasks.
+
 # ValidationFlow
 
 The purpose of validation flow is to demonstrate some features of the TPL (Task Parallel Library).
