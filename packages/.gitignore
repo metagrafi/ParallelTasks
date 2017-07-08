@@ -5,4 +5,8 @@
 # do not ignore targets
 !*.targets
 # do not ignore gitignore
+<<<<<<< HEAD
 !*.gitignore
+=======
+!*.gitignore
+>>>>>>> 6fd03334fbd289963f5287c1c0b026375d35dfee
